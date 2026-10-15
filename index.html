@@ -1,138 +1,256 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>آینده تو و نقش ریاضی در موفقیت | ریاضی پلاس</title>
+<title>آینده تو و نقش ریاضی در موفقیت</title>
 <style>
-:root{--navy:#132b52;--blue:#2368d8;--cyan:#57d9d0;--gold:#ffd166;--paper:#f5f8ff;--ink:#18253b}
+:root{
+  --navy:#172554;--blue:#2563eb;--cyan:#06b6d4;
+  --gold:#fbbf24;--paper:#f4f7ff;--ink:#24304a;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Tahoma,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.9}
-.wrap{width:min(1080px,92%);margin:auto}
-.hero{color:white;background:radial-gradient(circle at 15% 20%,#315ca0,transparent 35%),linear-gradient(135deg,#101d39,#174a83 68%,#087f91);padding:28px 0 55px}
-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.pill{border:1px solid #ffffff66;border-radius:30px;padding:4px 12px}
-.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center;padding-top:38px}
-.eyebrow{color:var(--cyan);font-weight:bold}
-h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.4}
-.hero p{color:#e5efff;font-size:1.08rem}
-.orbit{width:190px;height:190px;border:2px dashed #8be5e0;border-radius:50%;display:grid;place-items:center;margin:auto;transform:rotate(-12deg)}
-.mathsymbol{font-size:5rem;color:white;font-weight:bold}
-.btn{display:inline-block;border:0;border-radius:13px;padding:11px 18px;background:var(--gold);color:#17243b;text-decoration:none;font-weight:bold;cursor:pointer;font-family:inherit}
-.section{padding:42px 0}
-h2{color:var(--navy);font-size:clamp(1.4rem,4vw,2rem)}
-.lead{color:#53627b}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card,.step,.goal,.profile{background:white;border:1px solid #e2e9f5;border-radius:18px;padding:20px;box-shadow:0 8px 25px #20365b09}
-.icon{font-size:2rem}
-.card h3,.step h3{color:var(--navy)}
-.tag{display:inline-block;background:#eaf4ff;color:#2058a5;border-radius:8px;padding:2px 9px;font-size:.85rem}
-.quote{background:linear-gradient(110deg,#e5f9f7,#eef3ff);border-right:5px solid var(--blue);border-radius:16px;padding:20px;font-size:1.08rem;font-weight:bold}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.quizbox{background:var(--navy);color:white;border-radius:22px;padding:24px}
-.quizbox h2{color:white}
-.question{font-size:1.08rem;font-weight:bold}
-.answers{display:grid;gap:10px;margin:16px 0}
-.answer{font-family:inherit;text-align:right;padding:12px;border:1px solid #ffffff66;border-radius:12px;background:#ffffff0c;color:white;cursor:pointer}
-.answer.correct{border-color:#65e6bd;background:#0b775b}
-.answer.wrong{border-color:#ff9b9b;background:#823f4b}
-#feedback{min-height:3em;color:var(--gold)}
-.progress{height:8px;background:#ffffff25;border-radius:20px;overflow:hidden}
-.progress span{display:block;height:100%;width:0;background:var(--cyan)}
-.goal-list{display:grid;gap:10px}
-.goal{display:flex;gap:10px;align-items:flex-start}
-.goal input{margin-top:8px;width:18px;height:18px}
-.counter{font-weight:bold;color:var(--blue)}
-.profile{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center}
-.photo{width:100%;min-height:210px;border-radius:16px;background:#eaf1ff;display:grid;place-items:center;text-align:center;padding:12px;overflow:hidden}
-.photo img{width:100%;border-radius:12px}
-.file-label{display:inline-block;margin-top:10px;background:#eaf1ff;padding:8px 12px;border-radius:10px;cursor:pointer}
-footer{background:#101d39;color:#dce7ff;padding:24px 0;text-align:center}
-.small{font-size:.88rem;color:#6a7890}
-@media(max-width:700px){.hero-grid,.profile{grid-template-columns:1fr}.hero-art{padding:10px}.grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.photo{max-width:250px;margin:auto}}
+body{
+  margin:0;font-family:Tahoma,"Segoe UI",sans-serif;
+  background:linear-gradient(135deg,#eaf2ff,#f8fbff);
+  color:var(--ink);line-height:1.9;
+}
+header{
+  background:var(--navy);color:white;text-align:center;
+  padding:15px 10px;font-weight:bold;
+}
+header span{color:#fcd34d}
+main{max-width:850px;margin:22px auto;padding:0 14px}
+.deck{
+  background:white;border-radius:24px;overflow:hidden;
+  box-shadow:0 12px 40px #17255418;border:1px solid #dbeafe;
+}
+.progress{height:6px;background:#e5e7eb}
+#bar{height:100%;width:14.28%;background:linear-gradient(90deg,var(--cyan),var(--blue));transition:.3s}
+.slide{display:none;animation:appear .35s ease}
+.slide.active{display:block}
+.photo{height:240px;background:#dbeafe;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.content{padding:24px 25px 28px}
+.kicker{color:#087eaa;font-size:.88rem;font-weight:bold}
+h1,h2{color:var(--navy);line-height:1.65;margin:8px 0 12px}
+h1{font-size:clamp(1.55rem,5vw,2.3rem)}
+h2{font-size:clamp(1.35rem,4vw,1.8rem)}
+p{margin:8px 0}
+.lead{font-size:1.04rem}
+.points{display:grid;gap:10px;margin-top:17px}
+.point{
+  padding:11px 14px;border-radius:13px;
+  background:#f1f6ff;border-right:4px solid var(--cyan);
+}
+.point strong{color:var(--navy)}
+.highlight{
+  background:#fff7db;border-radius:14px;padding:13px 15px;
+  margin-top:17px;border-right:4px solid var(--gold);
+}
+.controls{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;padding:16px 20px;background:#f8faff;
+  border-top:1px solid #e5eaf5;
+}
+button{
+  font:inherit;border:0;border-radius:12px;padding:10px 17px;
+  cursor:pointer;font-weight:bold;
+}
+.primary{background:var(--blue);color:white}
+.secondary{background:#e6edfb;color:var(--navy)}
+button:disabled{opacity:.35;cursor:default}
+#counter{font-size:.9rem;color:#53627b;white-space:nowrap}
+footer{text-align:center;color:#667085;font-size:.83rem;padding:18px 8px}
+@keyframes appear{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:520px){
+  main{margin:12px auto;padding:0 9px}
+  .photo{height:190px}
+  .content{padding:18px 16px 22px}
+  .controls{padding:12px 10px}
+  button{padding:9px 12px;font-size:.88rem}
+  #counter{font-size:.8rem}
+}
 </style>
 </head>
 <body>
-<header class="hero">
-<div class="wrap">
-<nav><strong>✦ ریاضی پلاس</strong><span class="pill">ویژه دانش‌آموزان کنجکاو</span></nav>
-<div class="hero-grid">
-<div>
-<div class="eyebrow">از کلاس درس تا دنیای واقعی</div>
-<h1>آینده تو،<br>با فکر ریاضی ساخته می‌شود.</h1>
-<p>ریاضی فقط فرمول و امتحان نیست؛ تمرینی است برای دقیق دیدن، منطقی فکر کردن، پیدا کردن راه‌حل و تصمیم گرفتن. این مهارت‌ها در هر مسیری که انتخاب کنی به کارت می‌آیند.</p>
-<a class="btn" href="#discover">مسیر خودم را کشف می‌کنم ←</a>
-</div>
-<div class="hero-art"><div class="orbit"><div class="mathsymbol">∞</div></div></div>
-</div>
-</div>
-</header>
+
+<header>مسیر آینده‌ات از <span>فکر کردن</span> می‌گذرد!</header>
+
 <main>
-<section class="section" id="discover"><div class="wrap">
-<h2>ریاضی کجای آینده توست؟</h2>
-<p class="lead">مهارت‌های ریاضی در رشته‌ها و شغل‌های گوناگون به شکل‌های متفاوت ظاهر می‌شوند.</p>
-<div class="grid">
-<article class="card"><div class="icon">🏗️</div><span class="tag">طراحی و ساخت</span><h3>مهندسی و معماری</h3><p>اندازه‌گیری، هندسه و محاسبه کمک می‌کنند سازه‌ها ایمن، دقیق و کاربردی طراحی شوند.</p></article>
-<article class="card"><div class="icon">💻</div><span class="tag">فناوری</span><h3>برنامه‌نویسی و هوش مصنوعی</h3><p>الگوریتم‌ها، الگوها و منطق ریاضی در ساخت نرم‌افزارها و تحلیل داده نقش دارند.</p></article>
-<article class="card"><div class="icon">🌱</div><span class="tag">زندگی و جامعه</span><h3>پزشکی، محیط‌زیست و اقتصاد</h3><p>آمار و احتمال به بررسی شواهد، فهم روندها و تصمیم‌گیری آگاهانه کمک می‌کنند.</p></article>
+<div class="deck">
+<div class="progress"><div id="bar"></div></div>
+
+<!-- اسلاید ۱ -->
+<section class="slide active">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+alt="دانش‌آموزان در حال یادگیری و کار با فناوری"
+onerror="this.parentElement.style.display='none'">
 </div>
-</div></section>
-<section class="section"><div class="wrap"><div class="quote">قرار نیست همه ریاضی‌دان شوند؛ اما همه می‌توانند با تمرین ریاضی، دقیق‌تر فکر کردن و حل مسئله را یاد بگیرند.</div></div></section>
-<section class="section"><div class="wrap">
-<h2>چهار قدم کوچک برای آینده‌ای بزرگ</h2>
-<p class="lead">پیشرفت از قدم‌های کوچک و پیوسته ساخته می‌شود.</p>
-<div class="steps">
-<div class="step"><h3>۱. سؤال بپرس</h3><p>به‌جای حفظ کردن، دلیل هر روش را پیدا کن.</p></div>
-<div class="step"><h3>۲. راه‌های مختلف را امتحان کن</h3><p>اگر یک روش جواب نداد، مسئله را از زاویه‌ای تازه ببین.</p></div>
-<div class="step"><h3>۳. از اشتباه یاد بگیر</h3><p>اشتباه، سرنخی برای تمرین بیشتر است.</p></div>
-<div class="step"><h3>۴. پیشرفتت را ببین</h3><p>هر روز کمی تمرین کن و موفقیت‌های کوچک را ثبت کن.</p></div>
+<div class="content">
+<div class="kicker">۱ | شروع یک نگاه تازه</div>
+<h1>ریاضی؛ فراتر از نمره و امتحان</h1>
+<p class="lead">تا به حال فکر کرده‌ای ریاضی چه نقشی در انتخاب‌های روزمره و آیندهٔ تو دارد؟</p>
+<p>ریاضی فقط مجموعه‌ای از فرمول‌ها نیست؛ راهی برای شناخت بهتر دنیا، بررسی اطلاعات و تصمیم‌گیری آگاهانه است.</p>
+<div class="highlight">قرار نیست فقط ریاضی را حفظ کنی؛ قرار است یاد بگیری بهتر فکر کنی.</div>
 </div>
-</div></section>
-<section class="section"><div class="wrap"><div class="quizbox">
-<h2>چالش کوتاه: کارآگاه ریاضی 🧠</h2>
-<p>سه پرسش کوتاه را جواب بده و ببین چطور از منطق ریاضی استفاده می‌کنی.</p>
-<div class="progress"><span id="progress"></span></div>
-<p id="qcount">پرسش ۱ از ۳</p><div class="question" id="question"></div>
-<div class="answers" id="answers"></div><div id="feedback" aria-live="polite"></div>
-<button class="btn" id="next" hidden>پرسش بعدی ←</button>
-<button class="btn" id="restart" hidden>دوباره بازی کن ↻</button>
-<p class="small" style="color:#c6d8f7">هدف، فکر کردن و یاد گرفتن است؛ نه فقط سریع جواب دادن.</p>
-</div></div></section>
-<section class="section"><div class="wrap">
-<h2>برنامه هفتگی من</h2><p class="lead">مواردی را که انجام دادی علامت بزن.</p>
-<div class="goal-list" id="goals">
-<label class="goal"><input type="checkbox"><span>این هفته یک مسئله را با دو روش حل می‌کنم.</span></label>
-<label class="goal"><input type="checkbox"><span>یک کاربرد ریاضی در اطرافم پیدا می‌کنم.</span></label>
-<label class="goal"><input type="checkbox"><span>اشتباه‌های تمرینم را بررسی می‌کنم.</span></label>
-<label class="goal"><input type="checkbox"><span>درباره یک نکته سؤال می‌پرسم.</span></label>
+</section>
+
+<!-- اسلاید ۲ -->
+<section class="slide">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+alt="خرید روزانه و انتخاب محصولات"
+onerror="this.parentElement.style.display='none'">
 </div>
-<p class="counter" id="goalcount">۰ از ۴ هدف انجام شده</p>
-</div></section>
-<section class="section"><div class="wrap"><h2>پیام پایانی برای تو</h2>
-<div class="quote">آینده با یک جواب درست ساخته نمی‌شود؛ با کنجکاوی، تلاش، پرسیدن و دوباره امتحان کردن ساخته می‌شود. به توانایی یادگیری خودت اعتماد کن.</div>
-</div></section>
-<section class="section"><div class="wrap"><div class="profile">
-<div><div class="photo" id="photoBox"><div>📷<br><strong>جای عکس طراح</strong><p class="small">برای نمایش عکس، از گزینه زیر استفاده کن.</p></div></div>
-<label class="file-label">انتخاب عکس<input id="photoInput" type="file" accept="image/*" hidden></label></div>
-<div><span class="tag">طراحی و تهیه محتوای آموزشی</span><h2>مریم گودرزی</h2><p>دبیر ریاضی | همراه یادگیری و کشف توانایی‌ها</p><p>باور دارم ریاضی پنجره‌ای است به سوی فکر مستقل، خلاقیت و ساختن آینده‌ای روشن‌تر.</p></div>
-</div></div></section>
+<div class="content">
+<div class="kicker">۲ | ریاضی در زندگی روزمره</div>
+<h2>هر روز با ریاضی روبه‌رو می‌شوی!</h2>
+<div class="points">
+<div class="point"><strong>خرید و تخفیف:</strong> تشخیص قیمت واقعی و انتخاب به‌صرفه‌تر.</div>
+<div class="point"><strong>مدیریت پول:</strong> برنامه‌ریزی هزینه‌ها و پس‌انداز برای هدف‌ها.</div>
+<div class="point"><strong>زمان و سفر:</strong> برنامه‌ریزی مسیر، زمان حرکت و رسیدن به مقصد.</div>
+<div class="point"><strong>آمار و خبرها:</strong> بررسی نمودارها و تشخیص اطلاعات قابل اعتماد.</div>
+</div>
+<p>ریاضی کمک می‌کند انتخاب‌هایت را با دقت بیشتری انجام دهی.</p>
+</div>
+</section>
+
+<!-- اسلاید ۳ -->
+<section class="slide">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80"
+alt="پرداخت دیجیتال و خدمات مالی"
+onerror="this.parentElement.style.display='none'">
+</div>
+<div class="content">
+<div class="kicker">۳ | دنیای اقتصاد</div>
+<h2>پشت تصمیم‌های مالی، ریاضی ایستاده است</h2>
+<div class="points">
+<div class="point"><strong>سود و وام بانکی:</strong> فهم هزینه‌ها، سود، اقساط و شرایط بازپرداخت.</div>
+<div class="point"><strong>بازارهای مالی:</strong> تحلیل نمودارها، مقایسهٔ داده‌ها و شناخت ریسک.</div>
+<div class="point"><strong>خانواده و بودجه:</strong> تنظیم هزینه‌ها و برنامه‌ریزی برای آینده.</div>
+</div>
+<div class="highlight">تصمیم مالی خوب فقط به عددها وابسته نیست؛ به فهمیدن، مقایسه کردن و سنجیدن ریسک هم نیاز دارد.</div>
+</div>
+</section>
+
+<!-- اسلاید ۴ -->
+<section class="slide">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
+alt="هوش مصنوعی و فناوری‌های نوین"
+onerror="this.parentElement.style.display='none'">
+</div>
+<div class="content">
+<div class="kicker">۴ | آینده همین‌جاست</div>
+<h2>هوش مصنوعی بدون ریاضی؟ تقریباً غیرممکن!</h2>
+<p class="lead">بسیاری از فناوری‌های امروز بر پایهٔ ایده‌های ریاضی ساخته شده‌اند.</p>
+<div class="points">
+<div class="point"><strong>هوش مصنوعی:</strong> شناسایی الگوها و یادگیری از داده‌ها.</div>
+<div class="point"><strong>بازی‌ها و انیمیشن‌ها:</strong> حرکت، طراحی و ساخت جهان‌های دیجیتال.</div>
+<div class="point"><strong>رباتیک و مهندسی:</strong> اندازه‌گیری، محاسبه و کنترل حرکت.</div>
+<div class="point"><strong>امنیت دیجیتال:</strong> رمزنگاری و محافظت از اطلاعات.</div>
+</div>
+<p>هرچه فناوری پیشرفته‌تر می‌شود، نیاز به تفکر ریاضی نیز بیشتر احساس می‌شود.</p>
+</div>
+</section>
+
+<!-- اسلاید ۵ -->
+<section class="slide">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80"
+alt="دانش‌آموزان در حال همکاری و اندیشیدن"
+onerror="this.parentElement.style.display='none'">
+</div>
+<div class="content">
+<div class="kicker">۵ | مهم‌ترین دستاورد یادگیری</div>
+<h2>ریاضی به مغزت تمرین فکر کردن می‌دهد</h2>
+<p>شاید مهم‌ترین فایدهٔ ریاضی، خود عددها نباشند؛ بلکه مهارت‌هایی باشند که هنگام یادگیری آن به دست می‌آوری.</p>
+<div class="points">
+<div class="point"><strong>حل مسئله:</strong> پیدا کردن راه‌حل برای موقعیت‌های دشوار.</div>
+<div class="point"><strong>تفکر منطقی:</strong> بررسی دلیل‌ها به‌جای حدس زدن.</div>
+<div class="point"><strong>تحلیل و مقایسه:</strong> دیدن تفاوت‌ها و انتخاب آگاهانه‌تر.</div>
+<div class="point"><strong>پشتکار:</strong> تلاش دوباره وقتی راه اول جواب نمی‌دهد.</div>
+</div>
+<div class="highlight">این مهارت‌ها فقط برای کلاس ریاضی نیستند؛ در زندگی، روابط، کار و تصمیم‌گیری هم به کار می‌آیند.</div>
+</div>
+</section>
+
+<!-- اسلاید ۶ -->
+<section class="slide">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+alt="یادگیری مهارت‌های تازه با کمک فناوری"
+onerror="this.parentElement.style.display='none'">
+</div>
+<div class="content">
+<div class="kicker">۶ | از کجا شروع کنی؟</div>
+<h2>لازم نیست از همه بهتر باشی؛ فقط ادامه بده</h2>
+<div class="points">
+<div class="point">به‌جای حفظ کردن، سعی کن دلیل هر موضوع را بفهمی.</div>
+<div class="point">وقتی اشتباه می‌کنی، از خودت بپرس چه چیزی را می‌توانی یاد بگیری.</div>
+<div class="point">سؤال بپرس، کنجکاو باش و مسئله‌ها را مرحله‌به‌مرحله بررسی کن.</div>
+<div class="point">پیشرفت خودت را با گذشتهٔ خودت مقایسه کن، نه با دیگران.</div>
+</div>
+<p>توانایی ریاضی فقط یک استعداد مادرزادی نیست؛ تمرین و روش یادگیری مناسب می‌تواند آن را تقویت کند.</p>
+</div>
+</section>
+
+<!-- اسلاید ۷ -->
+<section class="slide">
+<div class="photo">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+alt="فضایی برای ایده‌پردازی و ساختن آینده"
+onerror="this.parentElement.style.display='none'">
+</div>
+<div class="content">
+<div class="kicker">۷ | انتخاب با توست</div>
+<h1>آینده را فقط تماشا نکن؛ برای ساختنش آماده شو!</h1>
+<p class="lead">یادگیری ریاضی تضمین نمی‌کند که همه‌چیز آسان شود؛ اما می‌تواند به تو کمک کند دقیق‌تر فکر کنی، بهتر تصمیم بگیری و با مسائل تازه روبه‌رو شوی.</p>
+<div class="highlight">می‌توانی مسیر یادگیری را انتخاب کنی؛ مسیری که در آن هر سؤال فرصتی برای رشد و هر اشتباه فرصتی برای فهمیدن بیشتر است.</div>
+<p><strong>آیندهٔ تو با کنجکاوی امروزت ساخته می‌شود.</strong></p>
+</div>
+</section>
+
+<div class="controls">
+<button id="prev" class="secondary" disabled>→ قبلی</button>
+<span id="counter">اسلاید ۱ از ۷</span>
+<button id="next" class="primary">بعدی ←</button>
+</div>
+</div>
+
+<footer>
+طراح: مریم گودرزی | دبیر ریاضی دبیرستان حجاب
+<br>ریاضی را برای زندگی یاد بگیر، نه فقط برای امتحان.
+</footer>
 </main>
-<footer>ریاضی فراتر از نمره و امتحان است ✦<br>طراح: مریم گودرزی</footer>
+
 <script>
-const questions=[
-{q:"اگر قیمت یک دفتر ۴۰ هزار تومان باشد، قیمت ۳ دفتر چقدر است؟",a:["۸۰ هزار تومان","۱۲۰ هزار تومان","۱۴۰ هزار تومان"],correct:1,why:"۴۰ را در ۳ ضرب می‌کنیم؛ جواب ۱۲۰ هزار تومان است."},
-{q:"برای فهمیدن اینکه کدام روش مطالعه بهتر است چه کنیم؟",a:["فقط حدس بزنیم","نتیجه‌ها را مقایسه کنیم","اولین روش را انتخاب کنیم"],correct:1,why:"مقایسه داده‌ها کمک می‌کند بر اساس شواهد تصمیم بگیریم."},
-{q:"وقتی مسئله با روش اول حل نمی‌شود، چه کنیم؟",a:["برای همیشه رهایش کنیم","جواب شانسی بدهیم","اطلاعات را بررسی و روش دیگری امتحان کنیم"],correct:2,why:"بررسی دوباره و آزمودن راه تازه، بخشی از حل مسئله است."}
-];
-let qi=0,score=0,answered=false;
-const qEl=document.getElementById('question'),aEl=document.getElementById('answers'),fb=document.getElementById('feedback'),next=document.getElementById('next'),restart=document.getElementById('restart');
-function render(){answered=false;const q=questions[qi];document.getElementById('qcount').textContent=`پرسش ${qi+1} از ${questions.length}`;document.getElementById('progress').style.width=`${qi/questions.length*100}%`;qEl.textContent=q.q;aEl.innerHTML='';fb.textContent='';next.hidden=true;restart.hidden=true;q.a.forEach((t,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=t;b.onclick=()=>choose(i,b);aEl.appendChild(b)})}
-function choose(i,b){if(answered)return;answered=true;const q=questions[qi];[...aEl.children].forEach((el,j)=>{el.disabled=true;if(j===q.correct)el.classList.add('correct')});if(i===q.correct){score++;fb.textContent='آفرین! '+q.why}else{b.classList.add('wrong');fb.textContent='اشکالی ندارد؛ '+q.why}document.getElementById('progress').style.width=`${(qi+1)/questions.length*100}%`;if(qi<questions.length-1)next.hidden=false;else{fb.textContent+=` نتیجه: ${score} از ${questions.length}. هر پاسخ فرصتی برای یادگیری است.`;restart.hidden=false}}
-next.onclick=()=>{qi++;render()};restart.onclick=()=>{qi=0;score=0;render()};render();
-document.getElementById('goals').addEventListener('change',()=>{const n=[...document.querySelectorAll('#goals input')].filter(x=>x.checked).length;document.getElementById('goalcount').textContent=`${['۰','۱','۲','۳','۴'][n]} از ۴ هدف انجام شده`});
-document.getElementById('photoInput').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const img=document.createElement('img');img.alt='عکس مریم گودرزی';img.src=URL.createObjectURL(f);const box=document.getElementById('photoBox');box.innerHTML='';box.appendChild(img)});
+const slides = [...document.querySelectorAll('.slide')];
+const prev = document.getElementById('prev');
+const next = document.getElementById('next');
+const counter = document.getElementById('counter');
+const bar = document.getElementById('bar');
+let current = 0;
+
+function showSlide(index){
+  current = Math.max(0, Math.min(index, slides.length - 1));
+  slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+  prev.disabled = current === 0;
+  next.disabled = current === slides.length - 1;
+  counter.textContent = `اسلاید ${current + 1} از ${slides.length}`;
+  bar.style.width = `${((current + 1) / slides.length) * 100}%`;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+prev.addEventListener('click', () => showSlide(current - 1));
+next.addEventListener('click', () => showSlide(current + 1));
+document.addEventListener('keydown', event => {
+  if(event.key === 'ArrowLeft') showSlide(current + 1);
+  if(event.key === 'ArrowRight') showSlide(current - 1);
+});
 </script>
 </body>
 </html>
